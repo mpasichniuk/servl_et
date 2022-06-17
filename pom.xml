@@ -7,19 +7,12 @@
     <groupId>org.example</groupId>
     <artifactId>servl_et</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>lesson1</module>
+    </modules>
+
+
     <packaging>pom</packaging>
-    <dependency>
-        <groupId>javax.servlet</groupId>
-        <artifactId>javax.servlet-api</artifactId>
-        <version>4.0.1</version>
-        <scope>provided</scope>
-    </dependency>
-    <dependency>
-        <groupId>org.slf4j</groupId>
-        <artifactId>slf4j-api</artifactId>
-        <version>1.7.25</version>
-        <scope>provided</scope>
-    </dependency>
 
     <properties>
         <maven.compiler.source>11</maven.compiler.source>

@@ -7,17 +7,12 @@
     import java.io.IOException;
 
 
-        @WebServlet(urlPatterns = "/first_http_servlet")
+        @WebServlet(urlPatterns = "/httpServlet")
         public class FirstHttpServlet extends HttpServlet {
 
             @Override
             protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-                resp.getWriter().println("<p>contextPath: " + req.getContextPath() + "</p>");
-                resp.getWriter().println("<p>servletPath: " + req.getServletPath() + "</p>");
-                resp.getWriter().println("<p>pathInfo: " + req.getPathInfo() + "</p>");
-                resp.getWriter().println("<p>queryString: " + req.getQueryString() + "</p>");
-                resp.getWriter().println("<p>param1: " + req.getParameter("param1") + "</p>");
-                resp.getWriter().println("<p>param2: " + req.getParameter("param2") + "</p>");
+                resp.getWriter().println("Hello from the first Servlet");
             }
         }
 

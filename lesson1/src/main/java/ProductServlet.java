@@ -15,23 +15,27 @@ import java.util.regex.Pattern;
 
     @Override
     public void init() throws ServletException {
-        productRepository.insert(new Product("BasicServlet.Product 1"));
-        productRepository.insert(new Product("BasicServlet.Product 2"));
-        productRepository.insert(new Product("BasicServlet.Product 3"));
-        productRepository.insert(new Product("BasicServlet.Product 4"));
-        productRepository.insert(new Product("BasicServlet.Product 5"));
-        productRepository.insert(new Product("BasicServlet.Product 6"));
-        productRepository.insert(new Product("BasicServlet.Product 7"));
-        productRepository.insert(new Product("BasicServlet.Product 8"));
-        productRepository.insert(new Product("BasicServlet.Product 9"));
-        productRepository.insert(new Product("BasicServlet.Product 10"));
-    }
+            this.productRepository = (ProductRepository) getServletContext().getAttribute("productRepository");
+        }
 
-    @Override
+
+
+
+        @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         Product product;
+        String pathInfo = req.getPathInfo();
+        String contextPath = req.getContextPath();
+        resp.getWriter().println("request.getPathInfo() " + "<p>" + pathInfo + "</p>");
+        resp.getWriter().println("request.getContextPath() " + "<p>" + contextPath + "</p>");
         if (req.getPathInfo() == null || req.getPathInfo().equals("/")) {
             PrintWriter wr = resp.getWriter();
+            wr.println("<table>");
+            wr.println("<tr>");
+            wr.println("<th>id</th>");
+            wr.println("<th>productTitle</th>");
+            wr.println("<th>cost</th>");
+            wr.println("</tr>");
 
             for (Product products : ProductRepository.findAll()) {
                 wr.println("<tr>");

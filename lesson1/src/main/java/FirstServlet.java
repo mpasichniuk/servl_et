@@ -15,7 +15,7 @@ public class FirstServlet implements Servlet {
 
     @Override
     public ServletConfig getServletConfig() {
-        return this.config;
+        return config;
     }
 
     @Override

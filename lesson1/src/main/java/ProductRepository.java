@@ -4,9 +4,9 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.atomic.AtomicLong;
 
-public interface ProductRepository {
-final Map<Long, Product> products = new ConcurrentHashMap<>();
-final AtomicLong identity = new AtomicLong(0);
+public class ProductRepository {
+static final Map<Long, Product> products = new ConcurrentHashMap<>();
+static final AtomicLong identity = new AtomicLong(0);
 
 
     public static List<Product> findAll() {
@@ -30,7 +30,11 @@ final AtomicLong identity = new AtomicLong(0);
         products.remove(id);
     }
 
-    void insert(Product product);
+    void insert(Product product) {
+        long id = identity.incrementAndGet();
+        product.setId(id);
+        products.put(id, product);
+    }
 }
 
 

@@ -49,15 +49,15 @@
                 </thead>
                 <tbody>
 
-                <% for (Product products: ProductRepository.findById(id)) { %>
+                <% for (Product products: ProductRepository.findById()) { %>
 
                 <tr>
                     <th scope="row"><%= products.getId() %></th>
                     <td><%= products.getProductTitle() %></td>
                     <td><%= products.getCost() %></td>
                     <td>
-                        <a class="btn btn-success" href="product_form.html"><i class="fas fa-edit"></i></a>
-                        <a class="btn btn-danger" href= req.getContextPath() + "/product/" + products.getId() + "'>" + products.getId() + "</a>"><i class="far fa-trash-alt"></i></a>
+                        <a class="btn btn-success" href="product_form.jsp"><i class="fas fa-edit"></i></a>
+                        <a class="btn btn-danger" href="#"><i class="far fa-trash-alt"></i></a>
                     </td>
                 </tr>
 

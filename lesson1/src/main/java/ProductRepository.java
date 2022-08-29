@@ -33,3 +33,4 @@ final AtomicLong identity = new AtomicLong(0);
     void insert(Product product);
 }
 
+

@@ -39,7 +39,7 @@
         <input type="hidden" id="id" name="id">
         <div class="form-group">
           <label>Product Title</label>
-          <input type="text" class="form-control" id="name" productTitle="product name" placeholder="Enter product name" value="Product">
+          <input type="text" class="form-control" id="name" name="productTitle" placeholder="Enter product name" value="Product">
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>

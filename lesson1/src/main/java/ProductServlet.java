@@ -8,7 +8,7 @@ import java.io.PrintWriter;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@WebServlet(urlPatterns = "/product")
+@WebServlet(urlPatterns = "/product/*")
     public class ProductServlet extends HttpServlet {
     private static final Pattern PARAM_PATTERN = Pattern.compile("\\/(\\d+)");
     private ProductRepository productRepository;
@@ -35,7 +35,7 @@ import java.util.regex.Pattern;
 
             for (Product products : ProductRepository.findAll()) {
                 wr.println("<tr>");
-                wr.println("<td><a href='" + req.getContextPath() + "/product/" + products.getId() + "'>" + products.getId() + "</a></td>");
+                wr.println("<td><a href='" + req.getContextPath() + "product.html" + products.getId() + "'>" + products.getId() + "</a></td>");
                 wr.println("<td>" + products.getProductTitle() + "</td>");
                 wr.println("</tr>");
             }

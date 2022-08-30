@@ -39,7 +39,7 @@ import java.util.regex.Pattern;
 
             for (Product products : ProductRepository.findAll()) {
                 wr.println("<tr>");
-                wr.println("<td><a href='" + req.getContextPath() + "product.html" + products.getId() + "'>" + products.getId() + "</a></td>");
+                wr.println("<td><a href='" + req.getContextPath() + "/product/" + products.getId() + "'>" + products.getId() + "</a></td>");
                 wr.println("<td>" + products.getProductTitle() + "</td>");
                 wr.println("</tr>");
             }

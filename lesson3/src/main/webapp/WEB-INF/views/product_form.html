@@ -39,7 +39,7 @@
                 <input th:field="*{id}" type="hidden" id="id" name="id" >
                 <div class="form-group">
                     <label>ProductTitle</label>
-                    <input th:field="*{productTitle}" type="text" class="form-control" id="name" name="Product Title" placeholder="Enter Product Title" >
+                    <input th:field="*{ProductTitle}" type="text" class="form-control" id="name" name="Product Title" placeholder="Enter Product Title" >
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
                 <a th:href="@{/product/{id}(id = ${product.id})}"action="#" th:action="@{/saveProduct}" th:object="{$product}" method="post"></a></i></a>

@@ -17,7 +17,7 @@ public class ProductSpringRep {
     @PostConstruct
     public void init() {
         this.insert(new ProductSpring("Product 1", 1L, 3));
-        this.insert(new ProductSpring("Product2", 3L, 4));
+        this.insert(new ProductSpring("Product 2", 3L, 4));
         this.insert(new ProductSpring("Product 3", 1L, 1));
         this.insert(new ProductSpring("Product 4", 6L, 6));
         this.insert(new ProductSpring("Product 5", 5L, 5));

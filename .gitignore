@@ -1,2 +1,5 @@
 # Project exclude paths
 /target/
+/out
+lesson1/target
+lesson2/target
